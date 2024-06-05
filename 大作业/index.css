@@ -1,0 +1,49 @@
+
+
+.backGround {
+
+    width: 100%;
+    height: 100%;
+    background-color: #02a0cf;
+    position: absolute;
+    margin: 0;
+}
+
+.image{
+
+    width: 75%;
+    height: 75%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    background-image: url("turtle\ +\ seawoods.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+
+.text{
+
+    position: relative;
+    top: 70%;
+
+    font-size: 8vh;
+
+    z-index: +1;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
