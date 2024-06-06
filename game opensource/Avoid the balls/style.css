@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica;
+  }
+  
+  canvas{
+    display: block;
+    position: absolute;
+    border: 2px solid black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .panel{
+    width: 24rem;
+    border-radius: 0 0 4px 4px;
+    background: #ccc;
+    z-index: 1000;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    padding: .5rem;
+    border: 1px solid #aaa;
+    box-shadow: 0 -1px 0 0 rgba(255,255,255,.5) inset;
+  }
+  
+  .p1, .p2, .p3{
+    width: 33.333333%;
+    text-align: center;
+  }
+  
+  .p1 span, .p2 span, .p3 span{
+    display: block;
+  }
+  
+  .p1 span:nth-child(2),
+  .p2 span:nth-child(2),
+  .p3 span:nth-child(2){
+    font-size: 1.5rem;
+  }
