@@ -10,7 +10,10 @@ body{
     width: 100vw;
     height: 100vh;
    
-    background-color: #02a0cf;
+    /* background-color: #02a0cf; */
+    background-image: url("images/beach\ background\ example.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     margin: 0;
     align-items: center;
@@ -27,17 +30,20 @@ body{
     margin: 0;
    
     position: relative;
-    background-image: url("turtle\ +\ seawoods.jpg");
+    background-image: url("images/turtle\ +\ seawoods.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    border-radius: 50%;
+
 
 }
 
 
 .text{
     position: absolute;
-    
+    font-style: italic;
+    color: aliceblue;
     right: 5%;
     transform: translateY(-50%);
     font-size: 4vw;
@@ -47,7 +53,15 @@ body{
 
 }
 
-
+#start{
+    position: absolute;
+    right: 5%;
+    font-size: 3vw;
+    margin: 0;
+    z-index: +1;
+    top: 60%;
+    border-radius: 30px;
+}
 
 
 
