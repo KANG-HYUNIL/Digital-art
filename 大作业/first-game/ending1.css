@@ -1,0 +1,42 @@
+body{
+    margin: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    
+}
+
+
+
+
+.backGround {
+
+    width: 100vw;
+    height: 100vh;
+   
+    /* background-color: #02a0cf; */
+    background-image: url("../images/beach\ background\ example.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    margin: 0;
+   
+    
+    justify-content: center;
+}
+
+.image{
+    position: relative;
+    width: 60%;
+    height: 40%;
+    top: 20%;
+    
+    background-image: url("../images/turtle\ eggs\ packed.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20%;
+    
+
+
+
+}
+
