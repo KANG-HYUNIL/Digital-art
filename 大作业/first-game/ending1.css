@@ -26,11 +26,11 @@ body{
 
 .image{
     position: relative;
-    width: 60%;
+    width: 40%;
     height: 40%;
     top: 20%;
     
-    background-image: url("../images/turtle\ eggs\ packed.jpg");
+    background-image: url("../images/turtle\ eggs\ on\ market.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 20%;
