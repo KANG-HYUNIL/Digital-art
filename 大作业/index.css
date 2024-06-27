@@ -11,7 +11,7 @@ body{
     height: 100vh;
    
     /* background-color: #02a0cf; */
-    background-image: url("images/beach\ background\ example.jpg");
+    background-image: url("images/index_background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
