@@ -10,9 +10,14 @@ body{
     height: 100vh;
    
     /* background-color: #02a0cf; */
+<<<<<<< HEAD
     background: black;
     background-image: url("images/index_background.jpg");
     background-size: contain;
+=======
+    background-image: url("images/index_background.jpg");
+    background-size: cover;
+>>>>>>> 83f84ef274e2f4c67764461c65d561194e308cb3
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
