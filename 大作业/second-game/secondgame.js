@@ -2,6 +2,7 @@
 
 const canvas = document.getElementById('canvas');
 const cvs = canvas.getContext('2d');
+const timer = document.querySelector('.timer');
 
 //example canvas width, height
 canvas.width = 1200;
@@ -15,12 +16,11 @@ const background = new Image();
 
 player.src = "../images/turtle for game2.png";
 dog.src = "../images/dog for game2.png";
-bird.src = "";
+bird.src = "../images/bird for game2.webp";
 background.src = "../images/background for game2.jpg"
 
-
-var timer = 0;
-const clearTime = 30;
+var curTime = 0;
+const clearTime = 60;
 
 var enemys = [];
 var enemySpeed = 3;
@@ -30,16 +30,25 @@ var dogWidth = 200;
 var birdWidth = 200;
 
 var playerSize;
+const playerSpawnY = 600;
+const jumpSpeed = 4;
+const jumpY = 300;
 var playerX = 0;
 var playerY = 600;
+var jumpCheck = false;
+var topCheck = false;
 
 var dogSize;
 var dogSpawnX = 1500;
-var dogSpawnY = 600;
+var dogSpawnY = 400;
 
 var birdSize;
-var birdSpawnX;
-var birdSpawnY;
+var birdSpawnX = 1500;
+var birdSpawnY = 200;
+const enemySpeedUp = 0.5;
+const spawnInterval = 400;
+const speedUpInterval = 600;
+
 
 var backGroundSize;
 
@@ -113,10 +122,10 @@ class Enemy{
 
     collisionCheck(){
 
-        if(playerX < this.x + this.width
-            && playerX + playerSize.width > this.x
-            && playerY < this.y + this.height
-            && playerY + playerSize.height > this.y
+        if(playerX < this.x + this.width * 0.8
+            && playerX + playerSize.width * 0.8 > this.x
+            && playerY < this.y + this.height * 0.8
+            && playerY + playerSize.height * 0.8 > this.y
         ){
             gameEnd();
         }
@@ -132,8 +141,28 @@ function moveObject(){
     cvs.clearRect(0, 0, canvas.width, canvas.height);
     cvs.drawImage(background, 0, -backGroundSize.height + canvas.height, backGroundSize.width, backGroundSize.height);
 
+    if (jumpCheck) {
+        playerY -= jumpSpeed;
+
+        if (playerY <= jumpY){
+            jumpCheck = false;
+        }
+    }
+    
+    else{
+
+        if (playerY <= playerSpawnY){
+            playerY += jumpSpeed;
+        }
+    }
+
+
     drawPlayer();
-    enemys.forEach(function (e) {
+    enemys.forEach(function (e, i, o) {
+
+        if(e.enemyX < -e.width){
+            o.splice(i, 1);
+        }
 
         e.move();
         e.spawn();
@@ -149,13 +178,16 @@ document.addEventListener("keydown", keyDownHandler);
 
 function keyDownHandler(e){
 
+    if (e.code === "Space" && !jumpCheck && playerY >= playerSpawnY){
+        jumpCheck = true;
+    }
 
 }//keyDownHandler
 
 
 function gameEnd(){
 
-    if (timer / 60 >= clearTime){
+    if (curTime / 60 >= clearTime){
         console.log("Win");
     }
 
@@ -165,34 +197,47 @@ function gameEnd(){
 
 }//gameEnd
 
+function setTimer(){
+    timer.innerHTML = "Score : " + parseInt(curTime / speedUpInterval);
+
+}//setTimer
+
+
 
 //60 Frame per sec
 function frameActive(){
 
     requestAnimationFrame(frameActive);
-    timer++;
-
-
+    curTime++;
 
     moveObject();
 
-    if (timer % 240 === 0){
+    if (curTime % spawnInterval === 0){
 
         random = Math.random() * 2;
 
         if (random <= 1){
-            enemys.push(new Enemy(dog, dogSpawnX, dogSpawnY, dogSize));
+            
+            while(random < 400){
+                random = Math.random() * 600;
+            }
+
+            enemys.push(new Enemy(dog, dogSpawnX, random, dogSize));
         }
 
         else{
-            enemys.push(new Enemy(bird, birdSpawnX, birdSpawnY, birdSize));
+            random = Math.random() * 600;
+
+            enemys.push(new Enemy(bird, birdSpawnX, random, birdSize));
         }       
     }
 
-    if (timer % 600 === 0){
-        enemySpeed += 0.5;
+    if (curTime % speedUpInterval === 0){
+        enemySpeed += enemySpeedUp;
     }
 
+    setTimer();
+    
 }//frameActive 
 
 cvs.clearRect(0, 0, canvas.width, canvas.height);
