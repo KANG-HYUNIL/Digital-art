@@ -6,62 +6,59 @@ body{
 }
 
 .backGround {
-
     width: 100vw;
     height: 100vh;
    
     /* background-color: #02a0cf; */
-    background-image: url("images/beach\ background\ example.jpg");
-    background-size: cover;
+    background: black;
+    background-image: url("images/index_background.jpg");
+    background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
     display: flex;
+    justify-content: center;
     margin: 0;
     align-items: center;
 }
 
+.button-container {
+    bottom: 5%;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    max-width: 60%; 
+}
 
-
-
-
-.image{
-    
-    width: 75%;
-    height: 75%;
-    margin: 0;
-   
-    position: relative;
-    background-image: url("images/turtle\ +\ seawoods.jpg");
+.button-container button {
+    flex: 1;
+    padding:0;
+    background-color: transparent;
+    background-image:url('images/button.png');
+    background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 70%;
-
-
+    color: white;
+    cursor: pointer;
+    font-size: 40px;
+    width: 120px;
+    height: 110px;
+    border: none;
 }
 
-
-.text{
-    position: absolute;
-    font-style: italic;
-    color: aliceblue;
-    right: 5%;
-    transform: translateY(-50%);
-    font-size: 4vw;
-    margin: 0;
-    z-index: +1;
-
-
+.button-container button:hover {
+    animation: blink 1.5s infinite; /* 设置闪烁动画 */
 }
 
-#start{
-    position: absolute;
-    right: 5%;
-    font-size: 3vw;
-    margin: 0;
-    z-index: +1;
-    top: 60%;
-    border-radius: 30px;
+@keyframes blink {
+    0%, 50%, 100% {
+      opacity: 1;
+    }
+    25%, 75% {
+      opacity: 0;
+    }
 }
+
 
 
 
