@@ -16,9 +16,12 @@ const image3Answer = noBtn;
 const image4Answer = yesBtn;
 const image5Answer = noBtn;
 const endingsSrc = "";
+const nextPageSrc = "";
 
-var lvl = 0;
-var lvlUp = 3;
+var eventListener = [];
+
+var lvl = 1;
+var lvlUp = 2;
 
 //get image
 const image1 = new Image();
@@ -95,28 +98,36 @@ function wrongAnswer(endingSrc){
 }
 
 //remove all btn events
-function removeBtnEvent(Btn){
+function removeBtnEvent(){
 
-    Btn.removeEventListener('click', rightAnswer);
-    Btn.removeEventListener('click', wrongAnswer);
-    Btn.removeEventListener('click', addAllEvent);
+    eventListener.forEach(({element, event, handler}) => {
+        element.removeEventListener(event, handler);
+    });
+    eventListener = []
+
+}
+
+function addTrackedEvent(element, event, handler){
+    element.addEventListener(event, handler);
+    eventListener.push({element, event, handler});
 }
 
  
 //add rightAnswer function in btn
 function addRightAnswer(Btn, nextImage){
-    Btn.addEventListener('click', rightAnswer.bind(null, nextImage));
-    Btn.addEventListener('click', function (){
+    const rightAnswerEvent = rightAnswer.bind(null, nextImage);
+    addTrackedEvent(Btn, 'click', rightAnswerEvent);
+    addTrackedEvent(Btn, 'click', function(){
         console.log("Right");
     });
-     
 
 }
 
 //add wrongAnswer function in btn
 function addWrongAnswer(Btn, endingSrc){
-    Btn.addEventListener('click', wrongAnswer.bind(null, endingSrc));
-    Btn.addEventListener('click', function (){
+    const wrongAnswerEvent = wrongAnswer.bind(null, endingSrc);
+    addTrackedEvent(Btn, 'click', wrongAnswerEvent);
+    addTrackedEvent(Btn, 'click', function(){
         console.log("Wrong");
     });
      
@@ -127,8 +138,9 @@ function addAllEvent(curImageAnswer, nextImage, endingSrc, btnLevel){
  
 
     //remove all btn event
-    removeBtnEvent(yesBtn);
-    removeBtnEvent(noBtn);
+     
+    removeBtnEvent();
+
 
     //add new btn events
     if (curImageAnswer == yesBtn){
@@ -144,37 +156,69 @@ function addAllEvent(curImageAnswer, nextImage, endingSrc, btnLevel){
     }
 
     btnLevel++;
-
+    console.log(btnLevel);
     switch (btnLevel){
 
+        //image1 btn
+        case 1:
+            addTrackedEvent(curImageAnswer, 'click', addAllEvent.bind(null, image2Answer, image3, endingsSrc, btnLevel));
+            //curImageAnswer.addEventListener('click', addAllEvent.bind(null, image2Answer, image3, endingsSrc, btnLevel));
+        break;
+            
+        //image2 btn
         case 2:
-           
-            curImageAnswer.addEventListener('click', addAllEvent.bind(null, image2Answer, image3, endingsSrc, btnLevel));
+            addTrackedEvent(curImageAnswer, 'click', addAllEvent.bind(null, image3Answer, image4, endingsSrc, btnLevel));
+            //curImageAnswer.addEventListener('click', addAllEvent.bind(null, image3Answer, image4, endingsSrc, btnLevel));
         break;
-            
+
+        //image3 btn
         case 3:
-           
-            curImageAnswer.addEventListener('click', addAllEvent.bind(null, image3Answer, image4, endingsSrc, btnLevel));
+            addTrackedEvent(curImageAnswer, 'click', addAllEvent.bind(null, image4Answer, image5, endingsSrc, btnLevel));
+            //curImageAnswer.addEventListener('click', addAllEvent.bind(null, image4Answer, image5, endingsSrc, btnLevel));
         break;
 
-        case 4:
-           
-            curImageAnswer.addEventListener('click', addAllEvent.bind(null, image4Answer, image5, endingsSrc, btnLevel));
-        break;
-
+        //image4 btn
         //last level?
-        case 5:
-            
+        case 4:
+
+            addTrackedEvent(curImageAnswer, 'click', addAllEvent.bind(null, image5Answer, image5, endingsSrc, btnLevel));
+        
             
         
+        break;
+
+        //image5 btn
+        case 5:
+            removeBtnEvent();
+
+            if (image5Answer == yesBtn){
+                yesBtn.addEventListener('click', moveNextPage);
+                noBtn.addEventListener('click', wrongAnswer);
+            }
+
+            else{
+                yesBtn.addEventListener('click', wrongAnswer);
+                noBtn.addEventListener('click', moveNextPage);
+            }
+
+
         break;
 
     }
 
 }
 
+function moveNextPage(){
+    window.location.href = nextPageSrc;
+}
+
+
+var imageSize = changeSize(image1, canvas.width);
+cvs.drawImage(image1, 0, 0, imageSize.width, imageSize.height);
+
+
 // if (image1On && image2On && image3On && image4On && image5On){
-rightAnswer(image1) //set first image
-addAllEvent(image1Answer, image2, endingsSrc, 1);
+ 
+addAllEvent(image1Answer, image2, endingsSrc, 0);
 //}
  
