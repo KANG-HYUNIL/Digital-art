@@ -2,7 +2,7 @@
 let typeWrite = document.querySelector(".TypeWrite");
 let nextPage = document.querySelector("#nextPage");
 
-const nextpageURL = "";
+const nextpageURL = "../first-game/firstgame.html";
 let textAry = ["Text TypeWrite Test", "Test 2"];
 
 const typeDelay = 100;
