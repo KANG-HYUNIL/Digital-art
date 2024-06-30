@@ -15,8 +15,8 @@ const image2Answer = noBtn;
 const image3Answer = noBtn;
 const image4Answer = yesBtn;
 const image5Answer = noBtn;
-const endingsSrc = "";
-const nextPageSrc = "";
+const clearSrc = "";
+const failSrc = "";
 
 var eventListener = [];
 
@@ -82,6 +82,9 @@ function rightAnswer(nextImage){
     //Need to write codes that show answer is right or wrong
     //After show results and User clicks, active codes below
 
+    setBlur(0);
+    alert("Good!");
+
     imageSize = changeSize(nextImage, canvas.width);
     
     cvs.drawImage(nextImage, 0, 0, imageSize.width, imageSize.height);
@@ -93,7 +96,8 @@ function wrongAnswer(endingSrc){
 
     //Need to write codes that show answer is right or wrong
     //After show results and User clicks, active codes below
-
+    setBlur(0);
+    alert("Oops!");
     window.location.href = endingSrc;
 }
 
@@ -161,27 +165,27 @@ function addAllEvent(curImageAnswer, nextImage, endingSrc, btnLevel){
 
         //image1 btn
         case 1:
-            addTrackedEvent(curImageAnswer, 'click', addAllEvent.bind(null, image2Answer, image3, endingsSrc, btnLevel));
-            //curImageAnswer.addEventListener('click', addAllEvent.bind(null, image2Answer, image3, endingsSrc, btnLevel));
+            addTrackedEvent(curImageAnswer, 'click', addAllEvent.bind(null, image2Answer, image3, failSrc, btnLevel));
+            //curImageAnswer.addEventListener('click', addAllEvent.bind(null, image2Answer, image3, clearSrc, btnLevel));
         break;
             
         //image2 btn
         case 2:
-            addTrackedEvent(curImageAnswer, 'click', addAllEvent.bind(null, image3Answer, image4, endingsSrc, btnLevel));
-            //curImageAnswer.addEventListener('click', addAllEvent.bind(null, image3Answer, image4, endingsSrc, btnLevel));
+            addTrackedEvent(curImageAnswer, 'click', addAllEvent.bind(null, image3Answer, image4, failSrc, btnLevel));
+            //curImageAnswer.addEventListener('click', addAllEvent.bind(null, image3Answer, image4, clearSrc, btnLevel));
         break;
 
         //image3 btn
         case 3:
-            addTrackedEvent(curImageAnswer, 'click', addAllEvent.bind(null, image4Answer, image5, endingsSrc, btnLevel));
-            //curImageAnswer.addEventListener('click', addAllEvent.bind(null, image4Answer, image5, endingsSrc, btnLevel));
+            addTrackedEvent(curImageAnswer, 'click', addAllEvent.bind(null, image4Answer, image5, failSrc, btnLevel));
+            //curImageAnswer.addEventListener('click', addAllEvent.bind(null, image4Answer, image5, clearSrc, btnLevel));
         break;
 
         //image4 btn
         //last level?
         case 4:
 
-            addTrackedEvent(curImageAnswer, 'click', addAllEvent.bind(null, image5Answer, image5, endingsSrc, btnLevel));
+            addTrackedEvent(curImageAnswer, 'click', addAllEvent.bind(null, image5Answer, image5, failSrc, btnLevel));
         
             
         
@@ -209,16 +213,25 @@ function addAllEvent(curImageAnswer, nextImage, endingSrc, btnLevel){
 }
 
 function moveNextPage(){
-    window.location.href = nextPageSrc;
+    window.location.href = clearSrc;
 }
 
+function gameStart(){
+    var imageSize = changeSize(image1, canvas.width);
+    cvs.drawImage(image1, 0, 0, imageSize.width, imageSize.height);
 
-var imageSize = changeSize(image1, canvas.width);
-cvs.drawImage(image1, 0, 0, imageSize.width, imageSize.height);
+
+    if (image1On && image2On && image3On && image4On && image5On){
+    
+    addAllEvent(image1Answer, image2, failSrc, 0);
+    }
+}
+
+document.getElementById('overlay').addEventListener('click', function () {
+
+    this.style.display = 'none';
+    gameStart();
+
+  });
 
 
-// if (image1On && image2On && image3On && image4On && image5On){
- 
-addAllEvent(image1Answer, image2, endingsSrc, 0);
-//}
- 
