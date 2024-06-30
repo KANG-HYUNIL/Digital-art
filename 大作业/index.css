@@ -10,14 +10,9 @@ body{
     height: 100vh;
    
     /* background-color: #02a0cf; */
-<<<<<<< HEAD
     background: black;
     background-image: url("images/index_background.jpg");
     background-size: contain;
-=======
-    background-image: url("images/index_background.jpg");
-    background-size: cover;
->>>>>>> 83f84ef274e2f4c67764461c65d561194e308cb3
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
@@ -49,17 +44,18 @@ body{
     width: 120px;
     height: 110px;
     border: none;
+    transition: all 0.2s;
 }
 
 .button-container button:hover {
-    animation: blink 1.5s infinite; /* 设置闪烁动画 */
+    animation: blink 0.5s; /* 设置闪烁动画 */
 }
 
 @keyframes blink {
-    0%, 50%, 100% {
+    0%,100% {
       opacity: 1;
     }
-    25%, 75% {
+    50% {
       opacity: 0;
     }
 }
