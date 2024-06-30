@@ -4,8 +4,8 @@ const canvas = document.getElementById('canvas');
 const cvs = canvas.getContext('2d');
 const timer = document.querySelector('.timer');
 
-const clearSrc = "";
-const failSrc = "";
+const clearSrc = "../third-introduction/thirdintro.html";
+const failSrc = "ending2.html";
 
 
 //example canvas width, height

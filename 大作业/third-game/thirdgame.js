@@ -15,8 +15,8 @@ const image2Answer = noBtn;
 const image3Answer = noBtn;
 const image4Answer = yesBtn;
 const image5Answer = noBtn;
-const clearSrc = "";
-const failSrc = "";
+const clearSrc = "../fourth-introduction/fourthintro.html";
+const failSrc = "ending3.html";
 
 var eventListener = [];
 
