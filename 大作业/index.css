@@ -15,12 +15,29 @@ body{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    background-position: center;
     display: flex;
+    justify-content: center;
     justify-content: center;
     margin: 0;
     align-items: center;
 }
 
+.button-container {
+    bottom: 5%;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    max-width: 60%; 
+}
+
+.button-container button {
+    flex: 1;
+    padding:0;
+    background-color: transparent;
+    background-image:url('images/button.png');
+    background-position: center;
 .button-container {
     bottom: 5%;
     position: absolute;
