@@ -1,45 +1,34 @@
-body{
-    border: 0;
-    min-width: 100%;
-    min-height: 100%;
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-.backGround{
-    position: relative;
-    
-    border: 0;
-    width: 100%;
     height: 100vh;
+    margin: 0;
+}
+
+
+#table-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center; 
+}
 
+
+table{
+   
+    border-collapse: collapse;
+    border: 1px solid black;
 
 }
 
-canvas{
-    position: relative;
-    border: 5px solid black;
-    
 
-}
 
-.timer{
-    width: 100%;
-    top: 90%;
-    margin-top: 5%;
-    
-    border: 0;
-    font-size:40px;
-    color: black;
-
+td{
+    border: 3px solid black;
+    width: 45px;
+    height: 45px;
+    text-align:center;
+    vertical-align:middle;
 }
 
 #overlay {
@@ -58,5 +47,3 @@ canvas{
     z-index: 1000;
     font-size: 5vw;
 }
-
-

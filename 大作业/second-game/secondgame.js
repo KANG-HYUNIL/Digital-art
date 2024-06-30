@@ -4,6 +4,10 @@ const canvas = document.getElementById('canvas');
 const cvs = canvas.getContext('2d');
 const timer = document.querySelector('.timer');
 
+const clearSrc = "";
+const failSrc = "";
+
+
 //example canvas width, height
 canvas.width = 1200;
 canvas.height = 800;
@@ -188,11 +192,13 @@ function keyDownHandler(e){
 function gameEnd(){
 
     if (curTime / 60 >= clearTime){
-        console.log("Win");
+        alert("Clear!");
+        window.location.href = clearSrc;
     }
 
     else{
-        console.log("Dead");
+        alert("Caught!");
+        window.location.href = failSrc;
     }
 
 }//gameEnd
@@ -242,7 +248,16 @@ function frameActive(){
 
 cvs.clearRect(0, 0, canvas.width, canvas.height);
 
-frameActive();
+document.getElementById('overlay').addEventListener('click', function () {
+
+    this.style.display = 'none';
+    frameActive();
+
+  });
+
+
+
+ 
 
 
 

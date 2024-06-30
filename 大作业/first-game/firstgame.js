@@ -4,6 +4,8 @@ const canvas = document.getElementById('canvas');
 const cvs = canvas.getContext('2d');
 const timer = document.querySelector('.timer');
 
+const clearSrc = "";
+const failSrc = "ending1.html";
 
 //set images sprite
 const player = new Image();
@@ -290,17 +292,30 @@ function setTimer(){
 function gameEnd(){
 
     if (curTime >= clearTime){
-        console.log("Claer");
+        alert("Clear!");
+        window.location.href = clearSrc;
     }
 
     else{
-        console.log("Caught!");
+        alert("Caught!");
+        window.location.href = failSrc;
     }
 
 }
 
+function gameStart(){
+    setInterval(enemySpawn, levelUpInterval); //enemySpawn interval
+    setInterval(moveObject, interval); //moveObject interval
+    setInterval(setTimer, 1000); //timer interval
+}
 
-setInterval(enemySpawn, levelUpInterval); //enemySpawn interval
-setInterval(moveObject, interval); //moveObject interval
-setInterval(setTimer, 1000); //timer interval
+document.getElementById('overlay').addEventListener('click', function () {
+
+    this.style.display = 'none';
+    gameStart();
+
+  });
+
+
+ 
 
