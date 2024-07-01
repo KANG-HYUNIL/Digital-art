@@ -1,7 +1,7 @@
 
 const container = document.getElementById('table-container');
-const clearSrc = "";
-const failSrc = "";
+const clearSrc = "../fifth-introduction/fifthintro.html";
+const failSrc = "ending4.html";
 
 var nowX;
 var nowY;
