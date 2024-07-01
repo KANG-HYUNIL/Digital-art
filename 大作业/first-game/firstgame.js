@@ -125,8 +125,7 @@ enemy.onload = function(){
 }
 
 
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
+ 
 
 //method for keydown 
 function keyDownHandler(e) {
@@ -304,6 +303,8 @@ function gameEnd(){
 }
 
 function gameStart(){
+    document.addEventListener("keydown", keyDownHandler, false);
+    document.addEventListener("keyup", keyUpHandler, false);
     setInterval(enemySpawn, levelUpInterval); //enemySpawn interval
     setInterval(moveObject, interval); //moveObject interval
     setInterval(setTimer, 1000); //timer interval
