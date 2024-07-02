@@ -10,8 +10,8 @@ body{
 
 .box{
      
-    max-height: 25vh;
-    min-width: 80vw;
+    min-height: 25%;
+    min-width: 80%;
     justify-content: center;
     border: 5px solid white;
     margin-top: 70vh;
@@ -30,7 +30,7 @@ body{
 
 #nextPage{
     position: relative;
-    margin-top: 10%;
+    margin-top: 5%;
     display: none;
     animation : blink 2s infinite;
 }
