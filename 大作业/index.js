@@ -18,3 +18,13 @@ function moveFirstInfoPage(){
 }
 
 
+endingsBtn.addEventListener('click', function(){
+
+    window.location.href = endingSrc;
+
+});
+
+moreBtn.addEventListener('click', function () { 
+    window.location.href = moreSrc;
+ });
+
