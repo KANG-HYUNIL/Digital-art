@@ -2,7 +2,7 @@
 let typeWrite = document.querySelector(".TypeWrite");
 let nextPage = document.querySelector("#nextPage");
 
-const nextpageURL = "";
+const nextpageURL = "../first-game/firstgame.html";
 let textAry = ["这是哪儿？","一切都是黑乎乎的...","外面有动静！"];
 
 const typeDelay = 100;
