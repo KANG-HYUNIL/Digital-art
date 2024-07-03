@@ -16,6 +16,27 @@ body {
     margin: 0;
 }
 
+#indexBtn{
+    position: absolute;
+    padding: 0;
+    background-color: transparent;
+    background-image: url('../images/button.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: white;
+    cursor: pointer;
+    font-size: 40px;
+    width: 200px;
+    height: 100px;
+    border: none;
+    transition: all 0.2s;
+    left: 5%;
+    top: 5%;
+    
+
+}
+
 .title {
     margin-top: 2vh;
     font-size: 50px;

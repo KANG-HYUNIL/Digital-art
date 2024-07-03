@@ -30,6 +30,12 @@ function deleteLocalStorage(){
     window.localStorage.removeItem("trueEnd");
 }
 
+const indexBtn = document.getElementById("indexBtn");
+const indexSrc = "../index.html"
+indexBtn.addEventListener("click", function(){
+   window.location.href = indexSrc; 
+});
+
 deleteBtn.addEventListener("click", deleteLocalStorage);
 
 for (i = 0; i < btnAry.length; i++){
