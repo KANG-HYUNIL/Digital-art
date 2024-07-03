@@ -22,12 +22,19 @@ const keyAry = ["ending1", "ending2", "ending3", "ending4", "ending5", "trueEnd"
 
 function deleteLocalStorage(){
 
-    window.localStorage.removeItem("ending1");
-    window.localStorage.removeItem("ending2");
-    window.localStorage.removeItem("ending3");
-    window.localStorage.removeItem("ending4");
-    window.localStorage.removeItem("ending5");
-    window.localStorage.removeItem("trueEnd");
+    if(confirm("Delete?")){
+
+        for (i = 0; i < keyAry.length; i++){
+            window.localStorage.removeItem(keyAry[i]);
+        }
+        alert("Deleted");
+    }
+
+    else{
+        
+    }
+
+  
 }
 
 const indexBtn = document.getElementById("indexBtn");
