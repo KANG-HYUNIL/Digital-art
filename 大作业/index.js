@@ -7,7 +7,7 @@ const endingsBtn = document.getElementById("endings");
 const endingSrc = "ach/ach.html";
 
 const moreBtn = document.getElementById("more");
-const moreSrc = "";
+const moreSrc = "more/more.html";
 
 //add page change event for click 
 startBtn.addEventListener('click', moveFirstInfoPage);
