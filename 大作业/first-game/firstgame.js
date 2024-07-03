@@ -13,6 +13,8 @@ const enemy = new Image();
 player.src = "../images/turtle egg for game1.jpg";
 enemy.src = "../images/hands for game1.jpg";
 
+let enemySpawnInterval, moveObjectInterval, timerInterval;
+
 //variables for movement
 let right = false;
 let left = false;
@@ -276,8 +278,9 @@ function moveEnemy(){
 
     Enemys.forEach(function(e) {
         e.move();
-        collisionCheck(e);
         cvs.drawImage(enemy, e.enemyX, e.enemyY, enemySize.width, enemySize.height);
+        collisionCheck(e);
+         
     });
     
 }//moveEnemy
@@ -289,6 +292,10 @@ function setTimer(){
 }//setTimer
 
 function gameEnd(){
+
+    clearInterval(levelUpInterval);
+    clearInterval(moveObjectInterval);
+    clearInterval(timerInterval);
 
     if (curTime >= clearTime){
         alert("Clear!");
@@ -305,9 +312,9 @@ function gameEnd(){
 function gameStart(){
     document.addEventListener("keydown", keyDownHandler, false);
     document.addEventListener("keyup", keyUpHandler, false);
-    setInterval(enemySpawn, levelUpInterval); //enemySpawn interval
-    setInterval(moveObject, interval); //moveObject interval
-    setInterval(setTimer, 1000); //timer interval
+    levelUpInterval = setInterval(enemySpawn, levelUpInterval); //enemySpawn interval
+    moveObjectInterval = setInterval(moveObject, interval); //moveObject interval
+    timerInterval = setInterval(setTimer, 1000); //timer interval
 }
 
 document.getElementById('overlay').addEventListener('click', function () {

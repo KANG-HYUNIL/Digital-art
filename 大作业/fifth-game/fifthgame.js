@@ -5,7 +5,7 @@ const cvs = canvas.getContext('2d');
 canvas.width = 900;
 canvas.height = 600;
 
-const clearSrc = "";
+const clearSrc = "../trueEnd/trueEnd.html";
 const failSrc = "ending5.html";
 
 

@@ -4,8 +4,8 @@ const canvas = document.getElementById('canvas');
 const cvs = canvas.getContext('2d');
 const timer = document.querySelector('.timer');
 
-const clearSrc = "";
-const failSrc = "";
+const clearSrc = "../third-introduction/thirdintro.html";
+const failSrc = "ending2.html";
 
 
 //example canvas width, height
@@ -23,9 +23,11 @@ dog.src = "../images/dog for game2.png";
 bird.src = "../images/bird for game2.webp";
 background.src = "../images/background for game2.jpg"
 
+var isRun = true;
+
 var curTime = 0;
 const clearTime = 60;
-var curTime = 0;
+ 
  
 
 var enemys = [];
@@ -201,6 +203,8 @@ function keyDownHandler(e){
 
 function gameEnd(){
 
+    isRun = false;
+
     if (curTime / 60 >= clearTime){
         alert("Clear!");
         window.location.href = clearSrc;
@@ -228,6 +232,8 @@ function setTimer(){
 
 //60 Frame per sec
 function frameActive(){
+
+    if (!isRun) return;
 
     requestAnimationFrame(frameActive);
     curTime++;
