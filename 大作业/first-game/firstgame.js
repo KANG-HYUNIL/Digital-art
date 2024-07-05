@@ -5,7 +5,7 @@ const cvs = canvas.getContext('2d');
 const timer = document.querySelector('.timer');
 
 const clearSrc = "../second-introduction/secondintro.html";
-const failSrc = "ending1.html";
+const failSrc = "../endings/ending1.html";
 
 //set images sprite
 const player = new Image();

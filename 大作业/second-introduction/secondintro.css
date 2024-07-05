@@ -9,23 +9,22 @@ body{
 }
 
 .box{
-     
-    min-height: 25%;
+    min-height: 100%;
     min-width: 80%;
     justify-content: center;
-    border: 5px solid white;
-    margin-top: 70vh;
 }
 
 .TypeWrite, #nextPage{
     position: relative;
-   
+    margin-top: -20px;
     margin: 0;
     color: white;
     text-align: center;
- 
-   
+}
 
+video{
+    height: 70vh;
+    width: 100vw;
 }
 
 #nextPage{

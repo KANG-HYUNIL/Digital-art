@@ -76,13 +76,13 @@ canvas{
     }
 }
 
+
 #overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    position: absolute;
+    margin: 0 auto;
+    width: 90%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.8);
     color: white;
     display: flex;
     justify-content: center;  
@@ -90,5 +90,22 @@ canvas{
     flex-direction: column;   
     text-align: center;
     z-index: 1000;
-    font-size: 5vw;
+    font-size:larger;
+}
+
+#overlay .level{
+    font-size:xx-large;
+}
+
+#overlay .click{
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%,100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
 }
