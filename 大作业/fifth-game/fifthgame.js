@@ -6,7 +6,7 @@ canvas.width = 900;
 canvas.height = 600;
 
 const clearSrc = "../trueEnd/trueEnd.html";
-const failSrc = "ending5.html";
+const failSrc = "../endings/ending5.html";
 
 
 

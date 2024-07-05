@@ -5,7 +5,7 @@ const cvs = canvas.getContext('2d');
 const timer = document.querySelector('.timer');
 
 const clearSrc = "../third-introduction/thirdintro.html";
-const failSrc = "ending2.html";
+const failSrc = "../endings/ending2.html";
 
 
 //example canvas width, height
