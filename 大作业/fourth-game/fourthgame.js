@@ -6,15 +6,19 @@ const failSrc = "ending4.html";
 var nowX;
 var nowY;
 
+var lightChk;
+var pollutionChk;
+var fishingNetChk;
+
 var map=[
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
     [1,0,0,0,0,0,4,0,0,0,0,1,1,0,2],
-    [1,0,1,1,1,1,1,1,1,1,0,0,0,4,1],
-    [1,4,1,0,0,4,0,0,0,1,1,0,1,0,1],
+    [1,0,1,1,1,1,1,1,1,1,0,5,0,0,1],
+    [1,5,1,0,0,4,0,0,0,1,1,0,1,0,1],
     [1,0,1,0,1,1,0,1,0,1,0,0,1,0,1],
-    [1,0,1,0,1,1,0,0,0,1,0,1,1,0,1],
+    [1,0,1,0,1,1,0,5,0,1,0,1,1,0,1],
     [1,0,1,0,1,0,0,1,0,1,0,0,1,0,1],
-    [1,0,1,0,1,0,1,0,1,0,1,0,0,0,1],
+    [1,0,1,0,1,0,1,0,1,0,1,0,5,0,1],
     [1,0,0,0,1,0,0,0,0,0,0,0,1,0,1],
     [1,1,0,1,1,0,1,0,1,1,0,1,1,0,1],
     [1,0,0,0,1,0,1,0,1,1,0,0,1,0,1],
@@ -23,6 +27,7 @@ var map=[
     [1,3,0,0,0,0,0,0,0,1,0,0,0,0,1],
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
 ];
+
 
 function Board(){
 
@@ -64,7 +69,15 @@ function drawmaze(){
             }
 
             else if(map[i][j] == 4){
-                ChangeColor(i, j, "FEFD48"); //Light
+                ChangeColor(i, j, "FEFD48"); //Light, yello
+            }
+
+            else if (map[i][j] == 5){
+                ChangeColor(i, j, "808080"); //Pollution, gray
+            }
+
+            else if (map[i][j] == 6){
+                                            //fishing net
             }
 
             if(map[i][j]==3){                    
@@ -89,9 +102,17 @@ function lightCheck(map){
     return map[nowX][nowY] == 4;
 }
 
+function pollutionCheck(map){
+    return map[nowX][nowY] == 5;
+}
+
+function fishingNetCheck(map){
+    return map[nowX][nowY] == 6;
+}
+
 function inputFunction(input){      
         
-    var lightChk = false;
+    
 
     switch(input){
         case 56://up
@@ -101,10 +122,7 @@ function inputFunction(input){
                 nowX++;
             }
 
-            else if (lightCheck(map)){
-                lightChk = true;
-                break;
-            }
+            
 
             map[nowX][nowY]=3;
 
@@ -116,11 +134,6 @@ function inputFunction(input){
             nowY++;
             if(map[nowX][nowY]==1){
                 nowY--;
-            }
-
-            else if (lightCheck(map)){
-                lightChk = true;
-                break;
             }
 
 
@@ -140,10 +153,6 @@ function inputFunction(input){
                 nowY++;
             }
 
-            else if (lightCheck(map)){
-                lightChk = true;
-                break;
-            }
 
             map[nowX][nowY]=3;
 
@@ -157,10 +166,6 @@ function inputFunction(input){
                 nowX--;
             }
 
-            else if (lightCheck(map)){
-                lightChk = true;
-                break;
-            }
 
             map[nowX][nowY]=3;
 
@@ -175,12 +180,16 @@ function inputFunction(input){
     drawmaze();
     
     //만약 빛에 걸렸다면
-    if(lightChk){
+    if(lightCheck()){  
+        lightChk = true;
+    }
 
-        //걸렸다는 alert 문 및 html 페이지 이동 문구 필요.
-        alert("Caught!");
-        window.location.href = failSrc;
+    else if (pollutionCheck()){
+        pollutionChk = true;
+    }
 
+    else if (fishingNetCheck()){
+        fishingNetChk = true;
     }
 
 }
@@ -222,6 +231,22 @@ document.getElementById('overlay').addEventListener('click', function () {
         }
 
         inputFunction(input);
+
+        if (lightChk){
+            alert("Light");
+            window.location.href = "";
+        }
+
+        else if (pollutionChk){
+            alert("pollution");
+            window.location.href = "";
+        }
+
+        else if (fishingNetChk){
+            alert("fishingNet");
+            window.location.href = "";
+
+        }
 
     });
 

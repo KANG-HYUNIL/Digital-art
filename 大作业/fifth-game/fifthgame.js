@@ -30,17 +30,27 @@ var image2;
 var image3;
 var image4;
 var image5;
+var image6;
+var image7;
+var image8;
+var image9;
+var image10;
 
 var image1Answer;
 var image2Answer;
 var image3Answer;
 var image4Answer;
 var image5Answer;
+var image6Answer;
+var image7Answer;
+var image8Answer;
+var image9Answer;
+var image10Answer;
 
 
 var imageLvl = 1;
 var blurLvl = 1;
-var blurLvlUp = 2;
+var blurLvlUp = 0.5;
 
 var imageAnswer;
 var userAnswer;
@@ -126,12 +136,40 @@ function imageLvlUp(){
 
 
         case 6:
-            alert("Arrived");
-            window.location.href = clearSrc;
+            alert("Correct");
+            img = image6;
+            imageAnswer = image6Answer;
 
         break;
 
+        case 7:
+            alert("Correct");
+            img = image7;
+            imageAnswer = image7Answer;
+        break;
 
+        case 8 :
+            alert("Correct");
+            img = image8;
+            imageAnswer = image8Answer;
+        break;
+
+        case 9:
+            alert("Correct");
+            img = image9;
+            imageAnswer = image9Answer;
+        break;
+
+        case 10:
+            alert("Correct");
+            img = image10;
+            imageAnswer = image10Answer;
+        break;
+
+        case 11:
+            alert("Arrived");
+            window.location.href = clearSrc;
+        break;
 
     }
 
