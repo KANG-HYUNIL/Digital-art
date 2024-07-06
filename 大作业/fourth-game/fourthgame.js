@@ -1,12 +1,13 @@
 
 const container = document.getElementById('table-container');
 const clearSrc = "../fifth-introduction/fifthintro.html";
-const failSrc = "";
+const pollutionSrc = "";
+const fishingNetSrc = "";
 
 var nowX;
 var nowY;
 
-var lightChk;
+
 var pollutionChk;
 var fishingNetChk;
 
@@ -69,16 +70,14 @@ function drawmaze(){
             }
 
             else if(map[i][j] == 4){
-                ChangeColor(i, j, "FEFD48"); //Light, yello
+                ChangeColor(i, j, "Black");
+                document.getElementById("x"+i+"y"+j).innerHTML="<img src='../images/fishing net for game4.jpg' width='40' height='40'>" //Light, yello
             }
 
             else if (map[i][j] == 5){
                 ChangeColor(i, j, "808080"); //Pollution, gray
             }
 
-            else if (map[i][j] == 6){
-                                            //fishing net
-            }
 
             if(map[i][j]==3){                    
                 //ChangeColor(i,j,"#90E4FF");
@@ -97,17 +96,12 @@ function erase(){
     }
 }
 
-function lightCheck(map){
-
-    return map[nowX][nowY] == 4;
-}
-
 function pollutionCheck(map){
     return map[nowX][nowY] == 5;
 }
 
 function fishingNetCheck(map){
-    return map[nowX][nowY] == 6;
+    return map[nowX][nowY] == 64;
 }
 
 function inputFunction(input){      
@@ -179,12 +173,9 @@ function inputFunction(input){
     erase();
     drawmaze();
     
-    //만약 빛에 걸렸다면
-    if(lightCheck()){  
-        lightChk = true;
-    }
 
-    else if (pollutionCheck()){
+
+    if (pollutionCheck()){
         pollutionChk = true;
     }
 
@@ -193,6 +184,8 @@ function inputFunction(input){
     }
 
 }
+
+
 
 document.getElementById('overlay').addEventListener('click', function () {
 
@@ -232,19 +225,16 @@ document.getElementById('overlay').addEventListener('click', function () {
 
         inputFunction(input);
 
-        if (lightChk){
-            alert("Light");
-            window.location.href = "";
-        }
+      
 
-        else if (pollutionChk){
+        if (pollutionChk){
             alert("pollution");
-            window.location.href = "";
+            window.location.href = pollutionSrc;
         }
 
         else if (fishingNetChk){
             alert("fishingNet");
-            window.location.href = "";
+            window.location.href = fishingNetSrc;
 
         }
 
@@ -253,4 +243,4 @@ document.getElementById('overlay').addEventListener('click', function () {
   });
 
  
- 
+
