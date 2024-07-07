@@ -15,42 +15,47 @@ const right = "right";
 const left = "left";
 const down = "down";
 
-const upAroow = new Image();
-const downAroow = new Image();
-const leftAroow = new Image();
-const rightAroow = new Image();
 
-upAroow.src = "";
-downAroow.src = ""
-leftAroow.src = ""
-rightAroow.src = ""
 
-var image1;
-var image2;
-var image3;
-var image4;
-var image5;
-var image6;
-var image7;
-var image8;
-var image9;
-var image10;
+var image1= new Image();
+var image2= new Image();
+var image3= new Image();
+var image4= new Image();
+var image5= new Image();
+var image6= new Image();
+var image7= new Image();
+var image8= new Image();
+var image9= new Image();
+var image10= new Image();
 
-var image1Answer;
-var image2Answer;
-var image3Answer;
-var image4Answer;
-var image5Answer;
-var image6Answer;
-var image7Answer;
-var image8Answer;
-var image9Answer;
-var image10Answer;
+image1.src = "../images/Level 1.jpg"
+image2.src = "../images/Level 2.jpg"
+image3.src = "../images/Level 3.jpg"
+image4.src = "../images/Level 4.jpg"
+image5.src = "../images/Level 5.jpg"
+image6.src = "../images/Level 6.jpg"
+image7.src = "../images/Level 7.jpg"
+image8.src = "../images/Level 8.jpg"
+image9.src = "../images/Level 9.jpg"
+image10.src = "../images/Level 10.jpg"
+
+
+
+var image1Answer = up;
+var image2Answer = right;
+var image3Answer = down;
+var image4Answer = up;
+var image5Answer = left;
+var image6Answer = up;
+var image7Answer = right;
+var image8Answer = left;
+var image9Answer = left;
+var image10Answer = down;
 
 
 var imageLvl = 1;
 var blurLvl = 1;
-var blurLvlUp = 0.5;
+var blurLvlUp = 0;
 
 var imageAnswer;
 var userAnswer;
