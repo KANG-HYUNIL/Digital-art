@@ -6,7 +6,7 @@ canvas.width = 900;
 canvas.height = 600;
 
 const clearSrc = "../trueEnd/trueEnd.html";
-const failSrc = "ending5.html";
+const failSrc = "../endings/ending5.html";
 
 
 
@@ -15,32 +15,47 @@ const right = "right";
 const left = "left";
 const down = "down";
 
-const upAroow = new Image();
-const downAroow = new Image();
-const leftAroow = new Image();
-const rightAroow = new Image();
 
-upAroow.src = "";
-downAroow.src = ""
-leftAroow.src = ""
-rightAroow.src = ""
 
-var image1;
-var image2;
-var image3;
-var image4;
-var image5;
+var image1= new Image();
+var image2= new Image();
+var image3= new Image();
+var image4= new Image();
+var image5= new Image();
+var image6= new Image();
+var image7= new Image();
+var image8= new Image();
+var image9= new Image();
+var image10= new Image();
 
-var image1Answer;
-var image2Answer;
-var image3Answer;
-var image4Answer;
-var image5Answer;
+image1.src = "../images/Level 1.jpg"
+image2.src = "../images/Level 2.jpg"
+image3.src = "../images/Level 3.jpg"
+image4.src = "../images/Level 4.jpg"
+image5.src = "../images/Level 5.jpg"
+image6.src = "../images/Level 6.jpg"
+image7.src = "../images/Level 7.jpg"
+image8.src = "../images/Level 8.jpg"
+image9.src = "../images/Level 9.jpg"
+image10.src = "../images/Level 10.jpg"
+
+
+
+var image1Answer = up;
+var image2Answer = right;
+var image3Answer = down;
+var image4Answer = up;
+var image5Answer = left;
+var image6Answer = up;
+var image7Answer = right;
+var image8Answer = left;
+var image9Answer = left;
+var image10Answer = down;
 
 
 var imageLvl = 1;
 var blurLvl = 1;
-var blurLvlUp = 2;
+var blurLvlUp = 0;
 
 var imageAnswer;
 var userAnswer;
@@ -126,12 +141,40 @@ function imageLvlUp(){
 
 
         case 6:
-            alert("Arrived");
-            window.location.href = clearSrc;
+            alert("Correct");
+            img = image6;
+            imageAnswer = image6Answer;
 
         break;
 
+        case 7:
+            alert("Correct");
+            img = image7;
+            imageAnswer = image7Answer;
+        break;
 
+        case 8 :
+            alert("Correct");
+            img = image8;
+            imageAnswer = image8Answer;
+        break;
+
+        case 9:
+            alert("Correct");
+            img = image9;
+            imageAnswer = image9Answer;
+        break;
+
+        case 10:
+            alert("Correct");
+            img = image10;
+            imageAnswer = image10Answer;
+        break;
+
+        case 11:
+            alert("Arrived");
+            window.location.href = clearSrc;
+        break;
 
     }
 

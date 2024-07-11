@@ -5,7 +5,7 @@ const cvs = canvas.getContext('2d');
 const timer = document.querySelector('.timer');
 
 const clearSrc = "../third-introduction/thirdintro.html";
-const failSrc = "ending2.html";
+const failSrc = "../endings/ending2.html";
 
 
 //example canvas width, height
@@ -42,10 +42,14 @@ const playerSpawnY = 600;
 const jumpSpeed = 4;
 const jumpY = 300;
  
+let up = false;
+let down = false;
+
 var playerX = 0;
 var playerY = 600;
-var jumpCheck = false;
-var topCheck = false;
+
+
+
 
 var dogSize;
 var dogSpawnX = 1500;
@@ -154,22 +158,24 @@ function moveObject(){
     cvs.clearRect(0, 0, canvas.width, canvas.height);
     cvs.drawImage(background, 0, -backGroundSize.height + canvas.height, backGroundSize.width, backGroundSize.height);
 
-
-
-    if (jumpCheck) {
+    //여기 부분 수정
+    if(up){
         playerY -= jumpSpeed;
+    }
 
-        if (playerY <= jumpY){
-            jumpCheck = false;
-        }
+    else if (down){
+        playerY += jumpSpeed;
     }
     
-    else{
-
-        if (playerY <= playerSpawnY){
-            playerY += jumpSpeed;
-        }
+    
+    if (playerY < jumpY){
+        playerY = jumpY;
     }
+
+    else if (playerY > canvas.height - playerSize.height){
+        playerY = canvas.height - playerSize.height;
+    }
+
 
     drawPlayer();
     enemys.forEach(function (e, i, o) {
@@ -193,13 +199,28 @@ function moveObject(){
 
 function keyDownHandler(e){
 
-    if (e.code === "Space" && !jumpCheck && playerY >= playerSpawnY){
-        jumpCheck = true;
+    if(e.key == "ArrowUp") {
+        up = true;
     }
+    else if(e.key == "ArrowDown") {
+        down = true;
+    }
+    
   
 
 }//keyDownHandler
 
+
+function keyUpHandler(e){
+
+    if( e.key == "ArrowUp") {
+        up = false;
+    }
+    else if(e.key == "ArrowDown") {
+        down = false;
+    }
+
+}
 
 function gameEnd(){
 
@@ -222,11 +243,6 @@ function setTimer(){
 
 }//setTimer
 
-
-// function setTimer(){
-//     timer.innerHTML = "Score : " + parseInt(curTime / speedUpInterval);
-
-// }//setTimer
 
 
 
@@ -274,6 +290,7 @@ document.getElementById('overlay').addEventListener('click', function () {
 
     this.style.display = 'none';
     document.addEventListener("keydown", keyDownHandler);
+    document.addEventListener("keyup", keyUpHandler, false);
     frameActive();
 
   });

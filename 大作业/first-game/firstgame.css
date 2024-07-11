@@ -32,11 +32,13 @@ canvas{
 
 .timer{
 
-    
+    margin-top: 5%;
     border: 0;
-
+    font-size: 50px;
     color: black;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
