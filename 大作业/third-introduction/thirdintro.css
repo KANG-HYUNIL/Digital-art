@@ -9,19 +9,25 @@ body{
 }
 
 .box{
-     
-    min-height: 25%;
-    min-width: 80%;
+    width: 100vw;
+    height:100vh;
+    background-color: black;
+    background-image: url("../images/back-to-sea.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
     justify-content: center;
-    border: 5px solid white;
-    margin-top: 70vh;
+    margin: 0;
+    align-items: center;
+    flex-direction: column;
 }
 
 .TypeWrite, #nextPage{
     position: relative;
-   
+    margin-top: -50px;
     margin: 0;
-    color: white;
+    color: rgb(44, 36, 2);
     text-align: center;
  
    

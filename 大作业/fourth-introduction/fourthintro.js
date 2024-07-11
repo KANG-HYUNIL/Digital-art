@@ -3,7 +3,7 @@ let typeWrite = document.querySelector(".TypeWrite");
 let nextPage = document.querySelector("#nextPage");
 
 const nextpageURL = "../fourth-game/fourthgame.html";
-let textAry = ["这是哪儿？","一切都是黑乎乎的...","外面有动静！"];
+let textAry = ["一天又一天过去，你慢慢长大了..."];
 
 const typeDelay = 100;
 const startDelay = 1000;

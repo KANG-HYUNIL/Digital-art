@@ -1,0 +1,198 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(233, 255, 248);
+    font-family: "Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+}
+
+#top{
+    position: relative;
+    background-image: url(../images/more_top.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100%;
+    height:100vh;
+    text-align: center;
+    background-position: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    z-index: 1;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+#title{
+    color: aliceblue;
+    font-size: 3em;
+    padding: 40px;
+    text-align: center;
+    max-width: 100%;
+    white-space: nowrap;
+    font-weight: bolder;
+    animation: fadeInUp 1s ease forwards;
+}
+
+#title::after{
+    content: "";
+    display: block;
+    width: 60%;
+    height: 4px;
+    background-color: yellow;
+    margin: 10px auto 0;
+    /* animation: fadeIn 2s ease forwards; */
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+nav{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+    background-color: rgb(211, 255, 240);
+}
+
+ul.topnav li {
+    float: left;
+    margin: 0 5px;
+}
+
+ul.topnav li a {
+    display: block;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/*ul.topnav li::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: aquamarine;
+    margin: -1px auto 0;
+}*/
+
+
+.topnav li:hover{
+    background-color: aquamarine;
+    border-radius: 30px;
+}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
+
+@media screen and (max-width:959px){
+    .turtle_type{
+        display:none;
+    }
+}
+
+.info{
+    margin: 0 auto;
+    width:70%;
+    padding-top: 60px;
+    position: static;
+}
+
+#hint{
+    font-size: small;
+    color:rgb(171, 20, 20);
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+#maximizePrompt{
+    margin: 0 auto;
+    background-color: rgb(250, 50, 50);
+    width: 70%;
+    max-width: 500px;
+    padding: 10px 20px;
+    margin-top: 5px;
+    border-radius: 15px;
+}
+
+h1,p,h2{
+    text-align: center;
+}
+
+h2{
+    margin: 0 0 5px 0;
+}
+
+div .turtle_type {
+    margin: 0 auto;
+    position: relative;
+    width: 960px;
+    height: 540px;
+    background-image: url('../images/turtle_type.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: none;
+}
+
+.hover-area {
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 30px;
+    box-shadow: 0 0 30px 30px rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s;
+    line-height: 25px;
+}
+
+.hover-area:hover {
+    opacity: 1;
+}
+
+.turtle_name{
+    font-weight: bold;
+}
+
+/* 定义各个区域的位置和大小 */
+#area1 { top: 60%; left: 5%; width: 20%; height: 25%; }
+#area2 { top: 32.5%; left: 12.5%; width: 20%; height: 25%; }
+#area3 { top: 17%; left: 27%; width: 28%; height: 30%; }
+#area4 { top: 60%; left: 27%; width: 25%; height: 30%; }
+#area5 { top: 52%; left: 50%; width: 25%; height: 30%; }
+#area6 { top: 65%; left: 75%; width: 25%; height: 30%; }
+#area7 { top: 10%; left: 60%; width: 35%; height: 45%; }
+

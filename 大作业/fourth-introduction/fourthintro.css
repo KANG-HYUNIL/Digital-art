@@ -13,19 +13,14 @@ body{
     min-height: 25%;
     min-width: 80%;
     justify-content: center;
-    border: 5px solid white;
-    margin-top: 70vh;
 }
 
 .TypeWrite, #nextPage{
     position: relative;
-   
+    margin-top: -20px;
     margin: 0;
     color: white;
     text-align: center;
- 
-   
-
 }
 
 #nextPage{
@@ -46,5 +41,10 @@ body{
         opacity: 1;
     }
 
+}
+
+video{
+    height: 70vh;
+    width: 100vw;
 }
 
