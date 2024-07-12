@@ -35,7 +35,7 @@ var playerSize;
 var enemySize;
 
 
-var enemySpeed = 3;
+var enemySpeed = 1;
 var levelCount = 0;
 var enemySpeedUpRate = 1;
 var levelUpInterval = 5000;

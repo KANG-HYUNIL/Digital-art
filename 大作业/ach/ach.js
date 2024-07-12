@@ -17,7 +17,7 @@ const ending4_1Image = "url('../images/ending_background.jpg')";
 const ending4_2Image = "url('../images/ending_background.jpg')";
 const ending4_3Image = "url('../images/ending_background.jpg')";
 const ending5Image = "url('../images/ending5_background.jpg')";
-const trueEndImage = "url('')";
+const trueEndImage = "url('../images/laying-eggs.jpg')";
 
 
 const btnAry = [ending1Btn, ending2Btn, ending3Btn, ending4_1Btn, ending4_2Btn, ending4_3Btn, ending5Btn, trueEndBtn];

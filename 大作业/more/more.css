@@ -125,10 +125,6 @@ ul.topnav li.right {float: right;}
     position: static;
 }
 
-#about{
-    text-align: center;
-}
-
 #hint{
     font-size: small;
     color:rgb(171, 20, 20);

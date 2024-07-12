@@ -229,6 +229,7 @@ function gameEnd(){
     if (curTime / 60 >= clearTime){
         alert("Clear!");
         window.location.href = clearSrc;
+        
     }
 
     else{
