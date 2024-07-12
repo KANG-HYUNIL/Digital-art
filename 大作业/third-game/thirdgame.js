@@ -21,7 +21,7 @@ const failSrc = "../endings/ending2.html";
 var eventListener = [];
 
 var lvl = 1;
-var lvlUp = 2;
+var lvlUp = 4;
 
 //get image
 const image1 = new Image();
@@ -30,11 +30,11 @@ const image3 = new Image();
 const image4 = new Image();
 const image5 = new Image();
 
-image1.src = "";
-image2.src = "";
-image3.src = "";
-image4.src = "";
-image5.src = "";
+image1.src = "../images/image1-for-game3.jpg";
+image2.src = "../images/image2-for-game3.jpg";
+image3.src = "../images/image3-for-game3.jpg";
+image4.src = "../images/image4-for-game3.jpg";
+image5.src = "../images/image5 for game3.jpg";
 
 
 var image1On = false;
@@ -221,10 +221,10 @@ function gameStart(){
     cvs.drawImage(image1, 0, 0, imageSize.width, imageSize.height);
 
 
-    if (image1On && image2On && image3On && image4On && image5On){
+   
     
     addAllEvent(image1Answer, image2, failSrc, 0);
-    }
+    
 }
 
 document.getElementById('overlay').addEventListener('click', function () {
