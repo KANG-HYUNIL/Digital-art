@@ -255,18 +255,18 @@ document.getElementById('overlay').addEventListener('click', function () {
       
 
         if (pollution){
-            alert("pollution");
+            alert("Its polluted water!");
             window.location.href = pollutionSrc;
         }
 
         else if (fishingNet){
-            alert("fishingNet");
+            alert("Oops! Fishing net!");
             window.location.href = fishingNetSrc;
 
         }
 
         else if(abandon){
-            alert("fishing Net");
+            alert("Oops! Fishing net!");
             window.location.href = abandonSrc;
         }
 
