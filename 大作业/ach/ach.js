@@ -4,21 +4,31 @@ const deleteBtn = document.getElementById("delete");
 const ending1Btn = document.getElementById("ending1");
 const ending2Btn = document.getElementById("ending2");
 const ending3Btn = document.getElementById("ending3");
-const ending4Btn = document.getElementById("ending4");
+const ending4_1Btn = document.getElementById("ending4-1");
+const ending4_2Btn = document.getElementById("ending4-2");
 const ending5Btn = document.getElementById("ending5");
 const trueEndBtn = document.getElementById("trueEnd");
 
-const ending1Image = "url('')";
-const ending2Image = "url('')";
-const ending3Image = "url('')";
-const ending4Image = "url('')";
-const ending5Image = "url('')";
+const ending1Image = "url('../images/ending_background.jpg')";
+const ending2Image = "url('../images/ending_background.jpg')";
+const ending3Image = "url('../images/ending_background.jpg')";
+const ending4_1Image = "url('../images/ending_background.jpg')";
+const ending4_2Image = "url('../images/ending_background.jpg')";
+const ending5Image = "url('../images/ending5_background.jpg')";
 const trueEndImage = "url('')";
-const notFoundImage = "url('')";
 
-const btnAry = [ending1Btn, ending2Btn, ending3Btn, ending4Btn, ending5Btn, trueEndBtn];
-const imageAry = [ending1Image, ending2Image, ending3Image, ending4Image, ending5Image, trueEndImage]
-const keyAry = ["ending1", "ending2", "ending3", "ending4", "ending5", "trueEnd"];
+
+const btnAry = [ending1Btn, ending2Btn, ending3Btn, ending4_1Btn, ending4_2Btn, ending5Btn, trueEndBtn];
+const imageAry = [ending1Image, ending2Image, ending3Image, ending4_1Image, ending4_2Image, ending5Image, trueEndImage]
+const keyAry = ["ending1", "ending2", "ending3", "ending4-1", "ending4-2", "ending5", "trueEnd"];
+const endingsSrc = [
+    "../endings/ending1.html",
+    "../endings/ending2.html",
+    "../endings/ending3.html",
+    "../endings/ending4-1.html",
+    "../endings/ending4-2.html",
+    "../endings/ending5.html",
+    "../trueEnd/trueEnd.html"];
 
 function deleteLocalStorage(){
 
@@ -27,7 +37,9 @@ function deleteLocalStorage(){
         for (i = 0; i < keyAry.length; i++){
             window.localStorage.removeItem(keyAry[i]);
         }
+
         alert("Deleted");
+        location.reload();
     }
 
     else{
@@ -45,14 +57,20 @@ indexBtn.addEventListener("click", function(){
 
 deleteBtn.addEventListener("click", deleteLocalStorage);
 
-for (i = 0; i < btnAry.length; i++){
+for (let i = 0; i < btnAry.length; i++){
 
     if (localStorage.getItem(keyAry[i])){
         btnAry[i].style.backgroundImage = imageAry[i];
+
+        endSrc = endingsSrc[i];
+        btnAry[i].innerHTML = "";
+        btnAry[i].addEventListener('click', function(){
+            window.location.href = endSrc;
+        });
     }
 
     else{
-        btnAry[i].style.backgroundImage = notFoundImage;
+        // btnAry[i].style.backgroundImage = notFoundImage;
     }
 
 };

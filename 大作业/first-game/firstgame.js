@@ -109,7 +109,8 @@ function changeSize(img, setWidth){
 //draw canvas
 function drawPlayer(){
 
-    cvs.clearRect(0,0, canvas.width, canvas.height);    
+    cvs.clearRect(0,0, canvas.width, canvas.height);   
+     
     playerSize = changeSize(player, setWidth);
     cvs.drawImage(player, rectX, rectY, playerSize.width, playerSize.height);
     

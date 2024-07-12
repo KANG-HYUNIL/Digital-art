@@ -1,14 +1,15 @@
 body {
     margin: 0;
     min-width: 100vw;
+    background-image: url("../images/escaped.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .backGround {
-    width: 100vw;
-    height: 100vh;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    
+     
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,7 +46,7 @@ body {
 }
 
 .button-container {
-    margin-top: 5%;
+    margin-top: 10%;
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -63,14 +64,15 @@ body {
     padding: 0;
     background-color: transparent;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    color: black;
+    color: white;
+    background-color: black;
     cursor: pointer;
     font-size: 40px;
     width: 300px;
     height: 300px;
-    border: none;
+    border: 5px solid black ;
     transition: all 0.2s;
 }
 
@@ -89,9 +91,9 @@ body {
     height: 110px;
     border: none;
 }
-
+/* 
 .button-container button:hover {
-    animation: blink 0.5s; /* 设置闪烁动画 */
+    animation: blink 0.5s;  
 }
 
 @keyframes blink {
@@ -101,7 +103,7 @@ body {
     50% {
         opacity: 0;
     }
-}
+} */
 
 .button-wrapper p {
     margin: 10px 0 0;

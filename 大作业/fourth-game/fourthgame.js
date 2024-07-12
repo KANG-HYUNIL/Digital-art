@@ -1,15 +1,15 @@
 
 const container = document.getElementById('table-container');
 const clearSrc = "../fifth-introduction/fifthintro.html";
-const pollutionSrc = "";
-const fishingNetSrc = "";
+const pollutionSrc = "../endings/ending4-1.html";
+const fishingNetSrc = "../endings/ending4-2.html";
 
 var nowX;
 var nowY;
 
 
-var pollutionChk;
-var fishingNetChk;
+var pollutionChk = false;
+var fishingNetChk = false;
 
 var map=[
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],

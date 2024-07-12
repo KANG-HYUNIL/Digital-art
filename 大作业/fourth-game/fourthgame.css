@@ -4,6 +4,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-image: url("../images/background%20for%20game2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 
