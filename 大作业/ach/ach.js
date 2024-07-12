@@ -6,6 +6,7 @@ const ending2Btn = document.getElementById("ending2");
 const ending3Btn = document.getElementById("ending3");
 const ending4_1Btn = document.getElementById("ending4-1");
 const ending4_2Btn = document.getElementById("ending4-2");
+const ending4_3Btn = document.getElementById("ending4-3");
 const ending5Btn = document.getElementById("ending5");
 const trueEndBtn = document.getElementById("trueEnd");
 
@@ -14,19 +15,21 @@ const ending2Image = "url('../images/ending_background.jpg')";
 const ending3Image = "url('../images/ending_background.jpg')";
 const ending4_1Image = "url('../images/ending_background.jpg')";
 const ending4_2Image = "url('../images/ending_background.jpg')";
+const ending4_3Image = "url('../images/ending_background.jpg')";
 const ending5Image = "url('../images/ending5_background.jpg')";
 const trueEndImage = "url('')";
 
 
-const btnAry = [ending1Btn, ending2Btn, ending3Btn, ending4_1Btn, ending4_2Btn, ending5Btn, trueEndBtn];
-const imageAry = [ending1Image, ending2Image, ending3Image, ending4_1Image, ending4_2Image, ending5Image, trueEndImage]
-const keyAry = ["ending1", "ending2", "ending3", "ending4-1", "ending4-2", "ending5", "trueEnd"];
+const btnAry = [ending1Btn, ending2Btn, ending3Btn, ending4_1Btn, ending4_2Btn, ending4_3Btn, ending5Btn, trueEndBtn];
+const imageAry = [ending1Image, ending2Image, ending3Image, ending4_1Image, ending4_2Image, ending4_3Image, ending5Image, trueEndImage]
+const keyAry = ["ending1", "ending2", "ending3", "ending4-1", "ending4-2", "ending4-3", "ending5", "trueEnd"];
 const endingsSrc = [
     "../endings/ending1.html",
     "../endings/ending2.html",
     "../endings/ending3.html",
     "../endings/ending4-1.html",
     "../endings/ending4-2.html",
+    "../endings/ending4-3.html",
     "../endings/ending5.html",
     "../trueEnd/trueEnd.html"];
 

@@ -3,23 +3,24 @@ const container = document.getElementById('table-container');
 const clearSrc = "../fifth-introduction/fifthintro.html";
 const pollutionSrc = "../endings/ending4-1.html";
 const fishingNetSrc = "../endings/ending4-2.html";
+const abandonSrc = "../endings/ending4-3.html";
 
 var nowX;
 var nowY;
 
-
-var pollutionChk = false;
-var fishingNetChk = false;
+var pollution = false;
+var fishingNet = false;
+var abandon = false;
 
 var map=[
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
     [1,0,0,0,0,0,4,0,0,0,0,1,1,0,2],
     [1,0,1,1,1,1,1,1,1,1,0,5,0,0,1],
-    [1,5,1,0,0,4,0,0,0,1,1,0,1,0,1],
+    [1,5,1,0,0,6,0,0,0,1,1,0,1,0,1],
     [1,0,1,0,1,1,0,1,0,1,0,0,1,0,1],
-    [1,0,1,0,1,1,0,5,0,1,0,1,1,0,1],
+    [1,0,1,0,1,1,0,6,0,1,0,1,1,0,1],
     [1,0,1,0,1,0,0,1,0,1,0,0,1,0,1],
-    [1,0,1,0,1,0,1,0,1,0,1,0,5,0,1],
+    [1,0,1,0,1,0,1,0,1,0,1,0,6,0,1],
     [1,0,0,0,1,0,0,0,0,0,0,0,1,0,1],
     [1,1,0,1,1,0,1,0,1,1,0,1,1,0,1],
     [1,0,0,0,1,0,1,0,1,1,0,0,1,0,1],
@@ -78,6 +79,10 @@ function drawmaze(){
                 ChangeColor(i, j, "808080"); //Pollution, gray
             }
 
+            else if (map[i][j] == 6){
+                ChangeColor(i, j, "Black");
+                document.getElementById("x"+i+"y"+j).innerHTML="<img src='../images/abandon fishing net.jpg' width='40' height='40'>" 
+            }
 
             if(map[i][j]==3){                    
                 //ChangeColor(i,j,"#90E4FF");
@@ -101,7 +106,28 @@ function pollutionCheck(map){
 }
 
 function fishingNetCheck(map){
-    return map[nowX][nowY] == 64;
+    return map[nowX][nowY] == 4;
+}
+
+function abandonCheck(map){
+    return map[nowX][nowY] == 6;
+}
+
+function check(){
+
+    if (pollutionCheck(map)){
+        pollution = true;
+    }
+
+    else if (fishingNetCheck(map)){
+        fishingNet = true;
+    }
+
+    else if (abandonCheck(map)){
+        abandon = true;
+    }
+
+
 }
 
 function inputFunction(input){      
@@ -116,7 +142,7 @@ function inputFunction(input){
                 nowX++;
             }
 
-            
+            check();
 
             map[nowX][nowY]=3;
 
@@ -135,8 +161,12 @@ function inputFunction(input){
                 alert("Exit");
                 window.location.href = clearSrc;
             }
-            map[nowX][nowY]=3;
 
+            check();
+
+            map[nowX][nowY]=3;
+            
+             
 
         break;
 
@@ -146,7 +176,7 @@ function inputFunction(input){
             if(map[nowX][nowY]==1){
                 nowY++;
             }
-
+            check();
 
             map[nowX][nowY]=3;
 
@@ -159,7 +189,7 @@ function inputFunction(input){
             if(map[nowX][nowY]==1){
                 nowX--;
             }
-
+            check();
 
             map[nowX][nowY]=3;
 
@@ -168,20 +198,17 @@ function inputFunction(input){
 
     }
 
+     
+    
     
     //이 아래의 2개 함수는 매 이동에 따라 미로를 지우고 다시 그리는 함수.
     erase();
     drawmaze();
     
 
+     
 
-    if (pollutionCheck()){
-        pollutionChk = true;
-    }
-
-    else if (fishingNetCheck()){
-        fishingNetChk = true;
-    }
+   
 
 }
 
@@ -227,15 +254,20 @@ document.getElementById('overlay').addEventListener('click', function () {
 
       
 
-        if (pollutionChk){
+        if (pollution){
             alert("pollution");
             window.location.href = pollutionSrc;
         }
 
-        else if (fishingNetChk){
+        else if (fishingNet){
             alert("fishingNet");
             window.location.href = fishingNetSrc;
 
+        }
+
+        else if(abandon){
+            alert("fishing Net");
+            window.location.href = abandonSrc;
         }
 
     });
