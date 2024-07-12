@@ -125,12 +125,15 @@ ul.topnav li.right {float: right;}
     position: static;
 }
 
+#about{
+    text-align: center;
+}
+
 #hint{
     font-size: small;
     color:rgb(171, 20, 20);
     font-weight: bold;
     padding: 0;
-    margin: 0;
 }
 
 #maximizePrompt{
@@ -143,11 +146,11 @@ ul.topnav li.right {float: right;}
     border-radius: 15px;
 }
 
-h1,p,h2{
+h1,p,h2,h3{
     text-align: center;
 }
 
-h2{
+h2,h3{
     margin: 0 0 5px 0;
 }
 
@@ -196,3 +199,164 @@ div .turtle_type {
 #area6 { top: 65%; left: 75%; width: 25%; height: 30%; }
 #area7 { top: 10%; left: 60%; width: 35%; height: 45%; }
 
+p{
+    width:80%;
+    margin: 10px auto;
+    text-indent: 20px;
+    line-height: 1.5em;
+    text-align: left;
+}
+
+.info{
+    display:flex;
+    background-color: rgb(221, 239, 239); 
+    flex-direction: column;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.thr{
+    display: block;
+    margin:10px;
+    border-radius: 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+}
+
+#t1{
+    background-image: url("../images/beach.jpg");
+}
+
+.tcontent{
+    opacity: 0;
+    color: black;
+    margin: 15px;
+    padding: 10px;
+}
+
+#t1:hover{
+    background-image: none;
+    background-color: rgb(118, 110, 158);
+    animation: fadeIn 1s ease forwards;
+}
+
+.tcontent:hover{
+    opacity: 1;
+    animation: fadeInUp 1s ease forwards;
+}
+
+#t2{
+    background-image: url("../images/climate-change.jpg");
+}
+
+#t2:hover{
+    background-image: none;
+    background-color: rgb(214, 212, 206);
+    animation: fadeInUp 1s ease forwards;
+}
+
+#t3{
+    background-image: url("../images/pollution.jpg");
+}
+
+#t3:hover{
+    background-image: none;
+    background-color: rgb(180, 203, 222);
+    animation: fadeInUp 1s ease forwards;
+}
+
+#t4{
+    background-image: url("../images/in-net.png");
+}
+
+#t4:hover{
+    background-image: none;
+    background-color: rgb(175, 225, 213);
+    animation: fadeInUp 1s ease forwards;
+}
+
+#t5{
+    background-image: url("../images/selling-eggs.webp");
+}
+
+#t5:hover{
+    background-image: none;
+    background-color: rgb(220, 189, 211);
+    animation: fadeInUp 1s ease forwards;
+}
+
+#act-container{
+    display: grid;
+    grid-gap: 10px;
+    padding: 10px;
+    width: 90%;
+    grid-template-columns: 30% 30% auto;
+    grid-template-rows:33.33% 33.33% auto ;
+    justify-content: center;
+    margin: auto;
+}
+
+#act-container > div {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+#a1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#pic1{
+    background-image: url("../images/turtle.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+}
+
+#a2{
+    grid-area: 2 / 2 / span 2 / span 2;
+}
+
+#pic2{
+    background-image: url("../images/pic2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#pic3{
+    background-image: url("../images/pic3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#tt{
+    margin-top: 50px;
+}
+
+#extra{
+    width: 65%;
+    margin: auto;
+}
+
+#open,#close{
+    font-size: 50px;
+    font-style: italic;
+    font-family: "Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif";
+}
+
+#open{
+    text-align: left;
+}
+
+#close{
+    text-align: right;
+
+}
